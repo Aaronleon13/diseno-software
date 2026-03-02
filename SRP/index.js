@@ -1,0 +1,58 @@
+// Principio de Responsabilidad Única (SRP)
+// Una clase debe tener una sola razón para cambiar
+// Este ejemplo es incorrecto porque la clase Usuario tiene múltiples responsabilidades
+// 1. Guardar en base de datos
+// 2. Enviar correo
+// 3. Eliminar reporte
+
+// class Usario {
+//   constructor(nombre, email) {
+//     this.nombre = nombre;
+//     this.email = email;
+//   }
+
+//   guardarEnBaseDeDatos() {
+//     console.log(`Guardando usuario ${this.nombre} en la base de datos`);
+//   }
+
+//   enviarCorreo() {
+//     console.log(`Enviando correo a ${this.email}`);
+//   }
+
+//   eliminarReporte(idReporte) {
+//     console.log(`Eliminando reporte ${idReporte} del usuario ${this.nombre}`);
+//   }
+// }
+// const usuario = new Usario("Brayan", "brayan@gmail.com");
+// usuario.guardarEnBaseDeDatos();
+// usuario.enviarCorreo();
+// usuario.eliminarReporte(123);
+
+// const usuario2 = new Usario("Sebastian", "sebastian@gmail.com");
+// usuario2.guardarEnBaseDeDatos();
+// usuario2.enviarCorreo();
+// usuario2.eliminarReporte(456);
+
+class Usuario {
+  constructor(nombre, email) {
+    this.nombre = nombre;
+    this.email = email;
+  }
+}
+
+function guardarUsuarioEnBaseDeDatos(usuario) {
+  console.log(`Guardando usuario ${usuario.nombre} en la base de datos`);
+}
+
+function enviarCorreo(usuario) {
+  console.log(`Enviando correo a ${usuario.email}`);
+}
+
+function eliminarReporte(usuario, idReporte) {
+  console.log(`Eliminando reporte ${idReporte} del usuario ${usuario.nombre}`);
+}
+
+const usuario = new Usuario("Brayan", "brayan@gmail.com");
+guardarUsuarioEnBaseDeDatos(usuario);
+enviarCorreo(usuario);
+eliminarReporte(usuario, 123);
