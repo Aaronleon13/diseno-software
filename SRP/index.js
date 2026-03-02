@@ -33,6 +33,13 @@
 // usuario2.enviarCorreo();
 // usuario2.eliminarReporte(456);
 
+// Ejemplo correcto de SRP
+// Separar las responsabilidades en diferentes clases
+// 1. Clase Usuario
+// 2. Funcion guardarUsuarioEnBaseDeDatos
+// 3. Funcion enviarCorreo
+// 4. Funcion eliminarReporte
+
 class Usuario {
   constructor(nombre, email) {
     this.nombre = nombre;
