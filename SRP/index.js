@@ -47,19 +47,37 @@ class Usuario {
   }
 }
 
-function guardarUsuarioEnBaseDeDatos(usuario) {
-  console.log(`Guardando usuario ${usuario.nombre} en la base de datos`);
+class UsuarioRepository {
+  guardar(usuario) {
+    console.log(`Guardando usuario ${usuario.nombre} en la base de datos`);
+  }
 }
 
-function enviarCorreo(usuario) {
-  console.log(`Enviando correo a ${usuario.email}`);
+class EmailService {
+  enviar(usuario) {
+    console.log(`Enviando correo a ${usuario.email}`);
+  }
 }
 
-function eliminarReporte(usuario, idReporte) {
-  console.log(`Eliminando reporte ${idReporte} del usuario ${usuario.nombre}`);
+class ReportRepository {
+  eliminar(usuario, idReporte) {
+    console.log(
+      `Eliminando reporte ${idReporte} del usuario ${usuario.nombre}`,
+    );
+  }
 }
 
 const usuario = new Usuario("Brayan", "brayan@gmail.com");
-guardarUsuarioEnBaseDeDatos(usuario);
-enviarCorreo(usuario);
-eliminarReporte(usuario, 123);
+
+const usuarioRepository = new UsuarioRepository();
+const emailService = new EmailService();
+const reportRepository = new ReportRepository();
+
+// Crear usuario
+usuarioRepository.guardar(usuario);
+
+// Enviar correo
+emailService.enviar(usuario);
+
+// Eliminar reporte
+reportRepository.eliminar(usuario, 123);
