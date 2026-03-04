@@ -51,9 +51,12 @@ class UsuarioRepository {
   guardar(usuario) {
     console.log(`Guardando usuario ${usuario.nombre} en la base de datos`);
   }
+  eliminar(usuario) {
+    console.log(`Eliminando usuario ${usuario.nombre} de la base de datos`);
+  }
 }
 
-class EmailService {
+class EmailRepository {
   enviar(usuario) {
     console.log(`Enviando correo a ${usuario.email}`);
   }
@@ -75,6 +78,7 @@ const reportRepository = new ReportRepository();
 
 // Crear usuario
 usuarioRepository.guardar(usuario);
+usuarioRepository.eliminar(usuario);
 
 // Enviar correo
 emailService.enviar(usuario);
