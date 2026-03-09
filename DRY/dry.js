@@ -30,3 +30,12 @@ function eliminarUsuario(usuario) {
     console.log("El email es obligatorio");
   }
 }
+
+const usuario = {
+  nombre: "",
+  email: "",
+};
+
+registrarUsuario(usuario);
+actualizarUsuario(usuario);
+eliminarUsuario(usuario);
